@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-//const { SECRET } = require("../config/envs");
+const { SECRET } = require("../config/envs");
 const { generateToken, validateToken } = require("../config/tokens");
 const { validateAuth } = require("../middlewares/auth");
 const Users = require("../models/Users");
@@ -41,7 +41,11 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  
+      
   const { email, password } = req.body;
+
+ /*  console.log("  LOGINNNN  ", email, password); */     // ACÁ ME LLEGAN BIEN EL EMAIL Y EL PASSWORD
 
   Users.findOne({ where: { email } }).then((user) => {
     if (!user) return res.sendStatus(401);

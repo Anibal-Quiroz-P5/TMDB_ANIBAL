@@ -1,4 +1,4 @@
-/* const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const { SECRET } = require("./envs");
 
 const generateToken = (payload) => {
@@ -10,4 +10,4 @@ const validateToken = (token) => {
   return jwt.verify(token, SECRET);
 };
 
-module.exports = { generateToken, validateToken }; */
+module.exports = { generateToken, validateToken };

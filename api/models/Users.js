@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const db = require("../config/db");
 
 class User extends S.Model {
-/*   hash(password, salt) {
+  hash(password, salt) {
     return bcrypt.hash(password, salt);
   }
 
@@ -12,7 +12,7 @@ class User extends S.Model {
     return this.hash(password, this.salt).then(
       (newHash) => newHash === this.password
     );
-  } */
+  } 
 }
 
 User.init(
@@ -33,9 +33,9 @@ User.init(
       type: S.STRING,
       allowNull: false,
     },
-/*     salt: {
+    salt: {
       type: S.STRING,
-    }, */
+    },
 
   },
   {
@@ -44,13 +44,13 @@ User.init(
   }
 );
 
-/* User.beforeCreate((user) => {
+User.beforeCreate((user) => {
   const salt = bcrypt.genSaltSync();
   user.salt = salt;
 
   return user.hash(user.password, salt).then((hash) => {
     user.password = hash;
   });
-}); */
+});
 
 module.exports = User;
