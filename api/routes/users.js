@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const { SECRET } = require("../config/envs");
+//const { SECRET } = require("../config/envs");
 const { generateToken, validateToken } = require("../config/tokens");
 const { validateAuth } = require("../middlewares/auth");
 const Users = require("../models/Users");
@@ -34,6 +34,7 @@ router.get("/:name", (req, res, next) => {
 //  CREAR UN USUARIO   ////////////////////////////////////////////////////
 
 router.post("/register", (req, res) => {
+  console.log("PASE POR ACAAAAAAAAAAAAAAAAAAAAAA");
   Users.create(req.body).then((user) => {
     res.status(201).send(user);
   });
