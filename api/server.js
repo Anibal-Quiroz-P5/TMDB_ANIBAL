@@ -21,21 +21,6 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hola desde el servidor!" });
 });
 
-/* app.get("/api", (req, res) => {
-  res.send("Hello Worldddd !!!!")
-}) */
-
-// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-/* app.post("/api/newusers", (req, res) => {
-  
-  console.log(" CHEEE DUMMY  ENDPOINTT ");    // con postman mando un POST a http://localhost:3001/api/clients y en terminal del back sale: CHEEE DUMMY  ENDPOINTT 
-
-  res.send(" CHE VOS POSTEASTE ALGOOO !!!")   // este aviso CHE VOS POSTEASTE ALGOOO !!!" lo muestra Postman en su Rx
-}) */
-
-// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 app.use("/api", routes);
 
